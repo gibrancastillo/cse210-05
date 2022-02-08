@@ -9,6 +9,11 @@ import random
 #         print(f"self._secret_word: {self._secret_word}")
 
 class Puzzle:
+    """
+
+    This Class holds all the puzzle that will be in the game 
+
+    """
 
     def __init__(self):
         self._words = ["charity", "honesty", "integrity", "patience", "forgiveness", "friendship", "service"]
@@ -17,9 +22,12 @@ class Puzzle:
         self._chosen_secret_word = random.choice(self._words)
         self._wrong_guesses = 0
         self._place_holders = []
-        list_chosen_words = list(self._chosen_secret_word)
-        for i in list_chosen_words:
+
+        #The following line and a block will be used to show place holders for the randomly chosen word
+        self._list_chosen_words = list(self._chosen_secret_word)
+        for i in self._list_chosen_words:
             self._place_holders.append("_")
+
         self._parachute_list = [ "  ___", 
                                  " /___\\", 
                                  " \   /", 
@@ -31,18 +39,31 @@ class Puzzle:
                                  "^^^^^^^" ]
 
     def draw_parachute(self):
-        """description Coming soon"""
+        """
+        
+        This function draws the parachutes lines alongside tracking the guessed letters
+        
+        """
         
         if len(self._parachute_list) > 0:
-
+            #The following block is just for matching the example given in class
             if self._parachute_list[0] == "O":
                 self._parachute_list[0] == "x"
+
         for i in self._parachute_list:
             print(i)
     
     def place_holders(self):
-        """description Coming soon"""
+        """
+
+        This function helps the player know how many letters the word has and let them see words
+        that already have been guessed correctly
+
+        """
+        #the following line makes the chosen word into a list of letters
         chosen_secret_word = list(self._chosen_secret_word)
+
+        #index is for keeping track of the for loop and the list index too
         index = 0 
         for i in chosen_secret_word:
             for j in self._gussed_letters:
@@ -55,7 +76,12 @@ class Puzzle:
         print()
     
     def guess_a_letter(self):
-        """description Coming soon"""
+        """
+
+        This function helps the player to choose a letter then it updates the parachute lines 
+        and keeps track of how many wrong letters have been guessed
+
+        """
         letter = input("Please guess a letter: ").lower()
         if letter not in self._chosen_secret_word:
             self._wrong_guesses += 1
@@ -63,10 +89,17 @@ class Puzzle:
         self._gussed_letters.append(letter)
     
     def check_status(self):
-        """description Coming soon"""
+        """
+
+        This function checks if the game has been won or not
+        
+        Return: Boolean
+
+        """
+        #The nested loop is for checking if the game has been won
         count = 0
         for i in self._place_holders:
-            for j in range(len(self._chosen_secret_word)):
+            for j in self._list_chosen_words:
                 if i == j:
                     count += 1
         if count == len(self._chosen_secret_word):
@@ -75,6 +108,7 @@ class Puzzle:
             return False
 
 
+#the following is how the puzzle class can be executed on director
 puzzle = Puzzle()
 
 is_playing = True
