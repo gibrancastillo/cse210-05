@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import imp
 from parachute import Parachute
 from puzzle import Puzzle
@@ -31,3 +32,11 @@ class Director:
 
     def _do_outputs(self):
         pass
+=======
+class Director:
+    def __init__(self):
+        pass
+
+    def start_game(self):
+        print("Start Jumper Game")
+>>>>>>> 40ce55f94584420cbb1ad2ed5e5f6d4d04e9a3fa
