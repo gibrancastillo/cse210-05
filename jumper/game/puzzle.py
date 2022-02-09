@@ -77,11 +77,10 @@ class Puzzle:
         count = 0
         
         for i in self._place_holders:
-            for j in self._list_chosen_words:
-                if i == j:
-                    count += 1
-        
-        if count == len(self._chosen_secret_word):
+            if i == "_":
+                count += 1
+           
+        if count == 0:
             return True
         else:
             return False

@@ -12,12 +12,21 @@ class Director:
         self._terminal_service = TerminalService()
     
     def start_game(self):
+
+        self._display_guessed_letters()
+        self._display_parachute()
+
         while self._is_playing:
-            self._display_guessed_letters()
-            self._display_parachute()
+
             self._guess_a_letter()
             self._do_updates()
+            self._display_guessed_letters()
+            self._display_parachute()
             self._do_outputs()
+
+            
+           
+            
 
     def _display_guessed_letters(self):
         self._puzzle.get_guessed_letters()
