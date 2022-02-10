@@ -30,10 +30,10 @@ class Puzzle:
         self._terminal_service = TerminalService()
         self._wrong_guesses = 0
         
-        self._build_letters_place_holders()
+        self._build_letters_place_holder()
     
 
-    def _build_letters_place_holders(self):
+    def _build_letters_place_holder(self):
         """
         Build the chosen secret word hidding place holder.
         

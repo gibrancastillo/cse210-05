@@ -13,6 +13,7 @@ class Parachute:
         _terminal_service (TerminalService): For getting and displaying information on the terminal.
     """
     
+
     def __init__(self):
         """
         Constructs a new Parachute.
@@ -32,6 +33,7 @@ class Parachute:
                                  "^^^^^^^ " ]
         self._terminal_service = TerminalService()
     
+
     def draw_parachute(self):
         """
         Draws the player's parachute.
@@ -48,6 +50,7 @@ class Parachute:
         for parachute in self._parachute_list:
             self._terminal_service.write_text(parachute)
     
+
     def cut_line(self):
         """
         Cuts the top line on the player's parachute.
@@ -58,6 +61,7 @@ class Parachute:
         if self._parachute_list[0] == "   x    ":
             self._is_out_of_line = True
         self._parachute_list.pop(0)
+    
     
     def is_out_of_line(self):
         """
