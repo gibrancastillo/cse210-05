@@ -1,12 +1,14 @@
 class TerminalService:
-    """A service that handles terminal operations.
-    
-    The responsibility of a TerminalService is to provide input and output operations for the 
-    terminal.
     """
+    A service that handles terminal operations.
+    
+    The responsibility of a TerminalService is to provide input and output operations for the terminal.
+    """
+
+    
     def read_letter(self, prompt):
-        return input(prompt).lower()
-        """Gets text input from the terminal. Directs the user with the given prompt.
+        """
+        Gets text input from the terminal. Directs the user with the given prompt.
 
         Args: 
             self (TerminalService): An instance of TerminalService.
@@ -17,8 +19,10 @@ class TerminalService:
         """
         return input(prompt).lower()
     
+
     def write_text(self, text):
-        """Displays the given text on the terminal. 
+        """
+        Displays the given text on the terminal. 
 
         Args: 
             self (TerminalService): An instance of TerminalService.
@@ -26,5 +30,13 @@ class TerminalService:
         """
         print(text)
     
+
     def write_text_without_newline(self, text):
+        """
+        Displays the given text on the terminal but instead of a new line do a space. 
+
+        Args: 
+            self (TerminalService): An instance of TerminalService.
+            text (string): The text to display.
+        """
         print(text, end = " ")
