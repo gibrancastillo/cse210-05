@@ -1,5 +1,7 @@
 # Jumper
-Description is pending, to be added soon.
+The jumper is a game whose main objetive is to guess the designated word, for this the user must make
+several attempts, guessing the letters of such a word, if he/she manages to join them all then he/she wins 
+the game, for this the user has several opportunities which will be shown in a drawing by removing the parachute from the character.
 
 ## Getting Started
 ---
