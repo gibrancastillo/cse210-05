@@ -50,7 +50,7 @@ class Parachute:
         for parachute in self._parachute_list:
             self._terminal_service.write_text(parachute)
     
-
+    # Method  to cut the parachute line if the guessed  later is X
     def cut_line(self):
         """
         Cuts the top line on the player's parachute.
@@ -61,7 +61,6 @@ class Parachute:
         if self._parachute_list[0] == "   x    ":
             self._is_out_of_line = True
         self._parachute_list.pop(0)
-    
     
     def is_out_of_line(self):
         """
